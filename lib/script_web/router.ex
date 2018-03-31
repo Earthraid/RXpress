@@ -19,8 +19,7 @@ defmodule ScriptWeb.Router do
     get "/", HomeController, :index
 
     resources "/Users", UserController
-    resources "/Session", SessionController, only: [:new, :create, :delete],
-    singleton: true
+    resources "/Sessions", SessionController, only: [:new, :create, :delete], singleton: true
 
     get "/Register", RegisterController, :index
 
@@ -35,7 +34,7 @@ defmodule ScriptWeb.Router do
         |> Phoenix.Controller.redirect(to: "/")
         |> halt()
       user_id ->
-        assign(conn, :current_user, Hello.Accounts.get_user!(user_id))
+        assign(conn, :current_user, Script.Accounts.get_user!(user_id))
     end
   end
   # Other scopes may use custom stacks.

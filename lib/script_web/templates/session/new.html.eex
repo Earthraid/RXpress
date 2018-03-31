@@ -1,4 +1,5 @@
 <div class="jumbotron">
+<div>
   <h1>Sign in</h1>
 
 <%= form_for @conn, session_path(@conn, :create), [method: :post, as: :user], fn f -> %>
@@ -20,10 +21,10 @@
     <%= submit "logout" %>
   </div>
 <% end %>
-    <div class="row reg_log back">
-      <h2>Login</h2>
-      <a class="col-sm-2 col-sm-offset-5 btn text-center" id="go_back" href="/">Go Back</a>
 
+    <div class="row back">
+      <a class="col-sm-2 col-sm-offset-5 btn text-center" id="go_back" href="/">Go Back</a>
    </div>
  <h5>&copy; 2018</h5>
+</div>
 </div>

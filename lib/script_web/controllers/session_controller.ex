@@ -1,4 +1,4 @@
-defmodule HelloWeb.SessionController do
+defmodule ScriptWeb.SessionController do
   use ScriptWeb, :controller
 
   alias Script.Accounts
@@ -13,6 +13,7 @@ defmodule HelloWeb.SessionController do
         conn
         |> put_flash(:info, "Welcome back!")
         |> put_session(:user_id, user.id)
+        #renew: true stops session fixation attacks
         |> configure_session(renew: true)
         |> redirect(to: "/")
       {:error, :unauthorized} ->
@@ -21,7 +22,7 @@ defmodule HelloWeb.SessionController do
         |> redirect(to: session_path(conn, :new))
     end
   end
-
+#log-out
   def delete(conn, _) do
     conn
     |> configure_session(drop: true)

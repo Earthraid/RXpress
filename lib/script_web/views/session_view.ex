@@ -1,3 +1,3 @@
-defmodule ScriptWeb.LoginView do
+defmodule ScriptWeb.SessionView do
   use ScriptWeb, :view
 end

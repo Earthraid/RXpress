@@ -1,4 +1,7 @@
 /* This file is for your main application css. */
+.home_page{
+  text-align: center;
+}
 #login {
   background-color: white;
   border: 1px solid #ff0000;
@@ -15,6 +18,7 @@
   border: 1px solid #ff0000;
   color:#ff0000;
   margin-right:2%;
+  margin-left:-12%;
 }
 #register:hover{
   background-color: #ff0000;
@@ -39,5 +43,5 @@
   color:#ffffff;
 }
 .back{
-  margin-top:-10%;
+  margin-top:10%;
 }
