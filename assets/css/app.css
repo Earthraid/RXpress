@@ -3,9 +3,41 @@
   background-color: white;
   border: 1px solid #ff0000;
   color:#ff0000;
-  margin-bottom:2%;
+  margin-left:2%;
+
 }
 #login:hover{
   background-color: #ff0000;
   color:#ffffff;
+}
+#register {
+  background-color: white;
+  border: 1px solid #ff0000;
+  color:#ff0000;
+  margin-right:2%;
+}
+#register:hover{
+  background-color: #ff0000;
+  color:#ffffff;
+}
+.tag_line{
+  margin-top:-5%;
+  margin-bottom:2%;
+  text-align: center;
+}
+.reg_log{
+  margin-bottom:20%;
+}
+#go_back {
+  background-color: white;
+  border: 1px solid #ff0000;
+  color:#ff0000;
+  margin-right:2%;
+}
+#go_back:hover{
+  background-color: #ff0000;
+  color:#ffffff;
+}
+.back{
+  margin-top:-10%;
 }

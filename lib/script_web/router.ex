@@ -18,9 +18,12 @@ defmodule ScriptWeb.Router do
 
     get "/", HomeController, :index
 
-    get "/Login", LoginController, :index
-  end
+    get "/Register", RegisterController, :index
 
+    get "/Login", LoginController, :index
+
+
+  end
   # Other scopes may use custom stacks.
   # scope "/api", ScriptWeb do
   #   pipe_through :api

@@ -28,6 +28,7 @@ body, form, ul, table {
   margin-bottom: 1em;
   background: url("/images/chasing-rx.png") no-repeat center;
   background-size: 90% 320px;
+  margin:auto;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
