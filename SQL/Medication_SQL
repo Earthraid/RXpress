@@ -1,0 +1,21 @@
+-- Table: public.medication
+
+-- DROP TABLE public.medication;
+
+CREATE TABLE public.medication
+(
+    cust_id integer NOT NULL,
+    med_id integer NOT NULL,
+    med_name text COLLATE pg_catalog."default" NOT NULL,
+    med_instruct text COLLATE pg_catalog."default",
+    pick_up integer,
+    delivery_time integer,
+    CONSTRAINT medication_pkey PRIMARY KEY (med_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.medication
+    OWNER to postgres;

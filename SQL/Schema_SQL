@@ -1,0 +1,17 @@
+-- Table: public.schema_migrations
+
+-- DROP TABLE public.schema_migrations;
+
+CREATE TABLE public.schema_migrations
+(
+    version bigint NOT NULL,
+    inserted_at timestamp without time zone,
+    CONSTRAINT schema_migrations_pkey PRIMARY KEY (version)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.schema_migrations
+    OWNER to postgres;

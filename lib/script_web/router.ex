@@ -21,10 +21,6 @@ defmodule ScriptWeb.Router do
     resources "/Users", UserController
     resources "/Sessions", SessionController, only: [:new, :create, :delete], singleton: true
 
-    get "/Register", RegisterController, :index
-
-    get "/Login", LoginController, :index
-
   end
   #contains page information such as author, if no login, redirects to home with flash error
   scope "/CMS", ScriptWeb.CMS, as: :cms do

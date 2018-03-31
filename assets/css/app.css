@@ -45,3 +45,17 @@
 .back{
   margin-top:10%;
 }
+#submit{
+  background-color: white;
+  border: 1px solid #ff0000;
+  color:#ff0000;
+  margin-right:2%;
+}
+#submit:hover{
+  background-color: #ff0000;
+  color:#ffffff;
+}
+.copy{
+  text-align: center;
+  margin-top:10%;
+}

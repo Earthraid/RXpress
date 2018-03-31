@@ -1,0 +1,20 @@
+-- Table: public.customer
+
+-- DROP TABLE public.customer;
+
+CREATE TABLE public.customer
+(
+    cust_id integer NOT NULL,
+    cust_address text COLLATE pg_catalog."default" NOT NULL,
+    f_name text COLLATE pg_catalog."default" NOT NULL,
+    l_name text COLLATE pg_catalog."default" NOT NULL,
+    med_id integer,
+    CONSTRAINT customer_pkey PRIMARY KEY (cust_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.customer
+    OWNER to postgres;

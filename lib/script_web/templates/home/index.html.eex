@@ -2,7 +2,7 @@
 <div class="home_page">
     <div class="row">
       <div class="col-sm-6 col-sm-offset-4 reg_log">
-      <a class="col-sm-5 btn text-center" id="register" href="/Register">Register</a>
+      <a class="col-sm-5 btn text-center" id="register" href="/Users/new">Register</a>
       <a class="col-sm-5 btn text-center" id="login" href="/Sessions/new">Your RXpress</a>
     </div>
   </div>

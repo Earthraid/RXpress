@@ -15,7 +15,7 @@
     <div class="container">
       <header class="header">
         <div class="logo"></div>
-        <h4 class="tag_line">Where health meets home delivery.</h4>
+        <h4 class="tag_line">Where health care meets home delivery.</h4>
       </header>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
