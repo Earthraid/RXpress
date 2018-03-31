@@ -1,4 +1,5 @@
 <div class="jumbotron">
+
     <div class="row reg_log back">
       <h2>Register</h2>
       <a class="col-sm-2 col-sm-offset-5 btn text-center" id="go_back" href="/">Go Back</a>

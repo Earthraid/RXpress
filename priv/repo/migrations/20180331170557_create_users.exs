@@ -4,7 +4,7 @@ defmodule Script.Repo.Migrations.CreateUsers do
   def change do
     create table(:users) do
       add :email, :string
-      add :encrypt_pass, :string
+      add :password, :string
 
       timestamps()
     end

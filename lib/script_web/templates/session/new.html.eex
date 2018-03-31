@@ -1,0 +1,29 @@
+<div class="jumbotron">
+  <h1>Sign in</h1>
+
+<%= form_for @conn, session_path(@conn, :create), [method: :post, as: :user], fn f -> %>
+  <div class="form-group">
+    <%= text_input f, :email, placeholder: "Email" %>
+  </div>
+
+  <div class="form-group">
+    <%= password_input f, :password, placeholder: "Password" %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Login" %>
+  </div>
+<% end %>
+
+<%= form_for @conn, session_path(@conn, :delete), [method: :delete, as: :user], fn _ -> %>
+  <div class="form-group">
+    <%= submit "logout" %>
+  </div>
+<% end %>
+    <div class="row reg_log back">
+      <h2>Login</h2>
+      <a class="col-sm-2 col-sm-offset-5 btn text-center" id="go_back" href="/">Go Back</a>
+
+   </div>
+ <h5>&copy; 2018</h5>
+</div>
