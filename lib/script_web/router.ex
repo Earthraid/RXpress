@@ -26,6 +26,13 @@ defmodule ScriptWeb.Router do
     get "/Login", LoginController, :index
 
   end
+  #contains page information such as author, if no login, redirects to home with flash error
+  scope "/CMS", ScriptWeb.CMS, as: :cms do
+    pipe_through [:browser, :authenticate_user]
+
+    resources "/Pages", PageController
+  end
+
   defp authenticate_user(conn, _) do
     case get_session(conn, :user_id) do
       nil ->
