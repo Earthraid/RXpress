@@ -1,0 +1,11 @@
+/* This file is for your main application css. */
+#login {
+  background-color: white;
+  border: 1px solid #ff0000;
+  color:#ff0000;
+  margin-bottom:2%;
+}
+#login:hover{
+  background-color: #ff0000;
+  color:#ffffff;
+}

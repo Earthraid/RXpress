@@ -1,0 +1,9 @@
+<div class="jumbotron">
+  <nav role="navigation">
+    <div class="nav row">
+      <a class="col-sm-2 col-sm-offset-5 btn text-center" id="login" href="/Login">Login</a>
+    </div>
+  </nav>
+  <h2>Where health meets home delivery.</h2>
+ <h5>&copy; 2018</h5>
+</div>
