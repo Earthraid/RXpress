@@ -3,10 +3,12 @@ defmodule Script.CMS.Page do
   import Ecto.Changeset
 
 
-  schema "pages" do
-    field :body, :string
-    field :title, :string
-    field :views, :integer
+  schema "customer" do
+    field :f_name, :string
+    field :l_name, :string
+    field :pharm_id, :integer
+    field :cust_address, :string
+    field :prescription_id
 
     timestamps()
   end
@@ -14,7 +16,7 @@ defmodule Script.CMS.Page do
   @doc false
   def changeset(page, attrs) do
     page
-    |> cast(attrs, [:title, :body])
-    |> validate_required([:title, :body])
+    |> cast(attrs, [:f_name, :l_name, :pharm_id, :cust_address, :prescription_id])
+    |> validate_required([:f_name, :l_name, :pharm_id, :cust_address, :prescription_id])
   end
 end

@@ -8,11 +8,11 @@ defmodule Script.Accounts do
 
   alias Script.Accounts.{User, Credential}
 
-  def authenticate_by_email_password(email, _password) do
+  def authenticate_by_user_name_password(user_name, _password) do
     query =
       from u in User,
         inner_join: c in assoc(u, :credential),
-        where: c.email == ^email
+        where: c.user_name == ^user_name
 
     case Repo.one(query) do
       %User{} = user -> {:ok, user}

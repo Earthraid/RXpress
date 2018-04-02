@@ -5,7 +5,7 @@ defmodule Script.Accounts.Credential do
   alias Script.Accounts.{Credential, User}
 
   schema "credentials" do
-    field :email, :string
+    field :user_name, :string
     belongs_to :user, User
 
     timestamps()
@@ -14,8 +14,8 @@ defmodule Script.Accounts.Credential do
   @doc false
   def changeset(credential, attrs) do
     credential
-    |> cast(attrs, [:email])
-    |> validate_required([:email])
-    |> unique_constraint(:email)
+    |> cast(attrs, [:user_name])
+    |> validate_required([:user_name])
+    |> unique_constraint(:user_name)
   end
 end

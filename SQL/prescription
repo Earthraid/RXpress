@@ -1,0 +1,23 @@
+-- Table: public.prescription
+
+-- DROP TABLE public.prescription;
+
+CREATE TABLE public.prescription
+(
+    med_name text COLLATE pg_catalog."default" NOT NULL,
+    med_info text COLLATE pg_catalog."default",
+    pick_up_time time without time zone NOT NULL,
+    delivery_time time without time zone NOT NULL,
+    delivered boolean,
+    not_deliverable boolean,
+    created_date timestamp without time zone NOT NULL,
+    pres_id integer NOT NULL DEFAULT nextval('prescription_pres_id_seq'::regclass),
+    CONSTRAINT pres_id PRIMARY KEY (pres_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.prescription
+    OWNER to postgres;

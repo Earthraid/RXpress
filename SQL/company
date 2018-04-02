@@ -1,0 +1,20 @@
+-- Table: public.company
+
+-- DROP TABLE public.company;
+
+CREATE TABLE public.company
+(
+    name text COLLATE pg_catalog."default" NOT NULL,
+    address text COLLATE pg_catalog."default" NOT NULL,
+    company_type integer NOT NULL,
+    affiliated_pharmacies text COLLATE pg_catalog."default",
+    company_id integer NOT NULL DEFAULT nextval('company_company_id_seq'::regclass),
+    CONSTRAINT company_id PRIMARY KEY (company_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.company
+    OWNER to postgres;

@@ -5,8 +5,10 @@ defmodule Script.Accounts.User do
   alias Script.Accounts.{User, Credential}
 
   schema "users" do
-    field :email, :string
+    field :user_name, :string
     field :password, :string
+    field :company_id, :integer
+    field :user_type, :integer
     has_one :credential, Credential
 
     timestamps()
@@ -15,8 +17,8 @@ defmodule Script.Accounts.User do
   @doc false
   def changeset(user, attrs) do
     user
-    |> cast(attrs, [:email, :password])
-    |> validate_required([:email, :password])
-    |> unique_constraint(:email)
+    |> cast(attrs, [:user_name, :password, :company_id, :user_type])
+    |> validate_required([:user_name, :password, :company_id, :user_type])
+    |> unique_constraint(:user_name)
   end
 end

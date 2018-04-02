@@ -1,0 +1,29 @@
+<h2>Show Page</h2>
+
+<ul>
+
+  <li>
+    <strong>Customer First Name:</strong>
+    <%= @page.f_name %>
+  </li>
+
+  <li>
+    <strong>Customer Last Name:</strong>
+    <%= @page.l_name %>
+  </li>
+
+  <li>
+    <strong>Customer Address:</strong>
+    <%= @page.cust_address %>
+  </li>
+
+  <li>
+    <strong>Prescription ID:</strong>
+    <%= @page.prescription_id %>
+  </li>
+
+
+</ul>
+
+<span><%= link "Edit", to: cms_page_path(@conn, :edit, @page) %></span>
+<span><%= link "Back", to: cms_page_path(@conn, :index) %></span>

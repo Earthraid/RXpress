@@ -22,12 +22,13 @@ defmodule ScriptWeb.Router do
     resources "/Sessions", SessionController, only: [:new, :create, :delete], singleton: true
 
   end
-  #contains page information such as author, if no login, redirects to home with flash error
-  scope "/CMS", ScriptWeb.CMS, as: :cms do
+  #Model as to how I think I need to move forward with login credentials and page access
+  scope "/Pharmacy", ScriptWeb.CMS, as: :cms do
     pipe_through [:browser, :authenticate_user]
 
     resources "/Pages", PageController
   end
+  
 
   defp authenticate_user(conn, _) do
     case get_session(conn, :user_id) do

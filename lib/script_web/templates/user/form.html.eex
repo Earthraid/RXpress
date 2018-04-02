@@ -6,17 +6,11 @@
   <% end %>
 
   <div class="form-group">
-   <%= inputs_for f, :credential, fn cf -> %>
-    <%= label cf, :email, class: "control-label" %>
-    <%= text_input cf, :email, class: "form-control" %>
-    <%= error_tag cf, :email %>
-  <% end %>
-  </div>
-
-  <div class="form-group">
-    <%= label f, "Confirm Email", class: "control-label" %>
-    <%= text_input f, :email, class: "form-control" %>
-    <%= error_tag f, :email %>
+    <%= inputs_for f, :credential, fn cf -> %>
+    <%= label cf, "User Name", class: "control-label" %>
+    <%= text_input cf, :user_name, class: "form-control" %>
+    <%= error_tag cf, :user_name %>
+    <% end %>
   </div>
 
   <div class="form-group">
@@ -26,9 +20,15 @@
   </div>
 
   <div class="form-group">
-    <%= label f, "Confirm Password", class: "control-label" %>
-    <%= text_input f, :password, class: "form-control" %>
-    <%= error_tag f, :password %>
+    <%= label f, "Company ID", class: "control-label" %>
+    <%= text_input f, :company_id, class: "form-control" %>
+    <%= error_tag f, :company_id %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, "User Type", class: "control-label" %>
+    <%= text_input f, :user_type, class: "form-control" %>
+    <%= error_tag f, :user_type %>
   </div>
 
 
@@ -36,6 +36,7 @@
     <%= submit "Submit", class: "btn", id: "submit" %>
   </div>
 <% end %>
+
 <div class="row reg_log back">
 <a class="col-sm-2 col-sm-offset-5 btn text-center" id="go_back" href="/">Go Back</a>
 </div>

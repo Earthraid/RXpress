@@ -1,15 +1,19 @@
-<h2>Show User</h2>
+<h2>User</h2>
 
 <ul>
 
   <li>
-    <strong>Email:</strong>
-    <%= @user.email %>
+    <strong>User Name:</strong>
+    <%= @user.user_name %>
   </li>
-    <li>
-      <strong>Company:</strong>
-    </li>
-
+  <li>
+    <strong>User Type:</strong>
+    <%= @user.user_type %>
+  </li>
+  <li>
+    <strong>Company:</strong>
+    <%= @user.company_type %>
+  </li>
 </ul>
 
 <span><%= link "Edit", to: user_path(@conn, :edit, @user) %></span>

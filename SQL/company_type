@@ -1,0 +1,17 @@
+-- Table: public.company_type
+
+-- DROP TABLE public.company_type;
+
+CREATE TABLE public.company_type
+(
+    type_description text COLLATE pg_catalog."default" NOT NULL,
+    type_id integer NOT NULL DEFAULT nextval('company_type_type_id_seq'::regclass),
+    CONSTRAINT type_id PRIMARY KEY (type_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.company_type
+    OWNER to postgres;

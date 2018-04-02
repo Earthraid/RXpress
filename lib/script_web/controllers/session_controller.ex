@@ -7,8 +7,8 @@ defmodule ScriptWeb.SessionController do
     render(conn, "new.html")
   end
 
-  def create(conn, %{"user" => %{"email" => email, "password" => password}}) do
-    case Accounts.authenticate_by_email_password(email, password) do
+  def create(conn, %{"user" => %{"user_name" => user_name, "password" => password}}) do
+    case Accounts.authenticate_by_user_name_password(user_name, password) do
       {:ok, user} ->
         conn
         |> put_flash(:info, "Welcome back!")
@@ -18,7 +18,7 @@ defmodule ScriptWeb.SessionController do
         |> redirect(to: "/")
       {:error, :unauthorized} ->
         conn
-        |> put_flash(:error, "Bad email/password combination")
+        |> put_flash(:error, "Bad user name/password combination")
         |> redirect(to: session_path(conn, :new))
     end
   end
