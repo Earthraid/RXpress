@@ -8,10 +8,17 @@ CREATE TABLE public.customer
     f_name text COLLATE pg_catalog."default" NOT NULL,
     l_name text COLLATE pg_catalog."default" NOT NULL,
     pharm_id integer NOT NULL,
-    prescription_id integer NOT NULL,
-    cust_id integer NOT NULL DEFAULT nextval('customer_cust_id_seq'::regclass),
+    id integer NOT NULL DEFAULT nextval('customer_cust_id_seq'::regclass),
     courier_id integer,
-    CONSTRAINT cust_id PRIMARY KEY (cust_id)
+    inserted_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    med_name text COLLATE pg_catalog."default" NOT NULL,
+    med_info text COLLATE pg_catalog."default",
+    pickup_time time without time zone NOT NULL,
+    delivered boolean,
+    not_delivered boolean,
+    delivery_time time without time zone NOT NULL,
+    CONSTRAINT cust_id PRIMARY KEY (id)
 )
 WITH (
     OIDS = FALSE

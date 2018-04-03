@@ -30,9 +30,27 @@
   </div>
 
   <div class="form-group">
-    <%= label f, "Prescription ID", class: "control-label" %>
-    <%= text_input f, :prescription_id, class: "form-control" %>
-    <%= error_tag f, :prescription_id %>
+    <%= label f, "Medication Name", class: "control-label" %>
+    <%= text_input f, :med_name, class: "form-control" %>
+    <%= error_tag f, :med_name %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, "Medication Information", class: "control-label" %>
+    <%= text_input f, :med_info, class: "form-control" %>
+    <%= error_tag f, :med_info %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, "Courier Pick Up Time", class: "control-label" %>
+    <%= text_input f, :pickup_time, class: "form-control" %>
+    <%= error_tag f, :pickup_time %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, "Delivery Time", class: "control-label" %>
+    <%= text_input f, :delivery_time, class: "form-control" %>
+    <%= error_tag f, :delivery_time %>
   </div>
 
   <div class="form-group">

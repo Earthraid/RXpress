@@ -8,7 +8,13 @@ defmodule Script.CMS.Page do
     field :l_name, :string
     field :pharm_id, :integer
     field :cust_address, :string
-    field :prescription_id
+    field :med_name, :string
+    field :med_info, :string
+    field :pickup_time, :time
+    field :delivery_time, :time
+    field :delivered, :boolean
+    field :not_delivered, :boolean
+    field :courier_id, :integer
 
     timestamps()
   end
@@ -16,7 +22,9 @@ defmodule Script.CMS.Page do
   @doc false
   def changeset(page, attrs) do
     page
-    |> cast(attrs, [:f_name, :l_name, :pharm_id, :cust_address, :prescription_id])
-    |> validate_required([:f_name, :l_name, :pharm_id, :cust_address, :prescription_id])
+    |> cast(attrs, [:f_name, :l_name, :pharm_id, :cust_address, :med_name, :med_info, :pickup_time,
+    :delivery_time, :delivered, :not_delivered, :courier_id])
+    |> validate_required([:f_name, :l_name, :pharm_id, :cust_address, :med_name, :pickup_time,
+    :delivery_time])
   end
 end

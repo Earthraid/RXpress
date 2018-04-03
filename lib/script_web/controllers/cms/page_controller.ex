@@ -18,7 +18,7 @@ defmodule ScriptWeb.CMS.PageController do
     case CMS.create_page(page_params) do
       {:ok, page} ->
         conn
-        |> put_flash(:info, "Page created successfully.")
+        |> put_flash(:info, "Customer saved successfully.")
         |> redirect(to: cms_page_path(conn, :show, page))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
@@ -42,7 +42,7 @@ defmodule ScriptWeb.CMS.PageController do
     case CMS.update_page(page, page_params) do
       {:ok, page} ->
         conn
-        |> put_flash(:info, "Page updated successfully.")
+        |> put_flash(:info, "Customer updated successfully.")
         |> redirect(to: cms_page_path(conn, :show, page))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", page: page, changeset: changeset)
@@ -54,7 +54,7 @@ defmodule ScriptWeb.CMS.PageController do
     {:ok, _page} = CMS.delete_page(page)
 
     conn
-    |> put_flash(:info, "Page deleted successfully.")
+    |> put_flash(:info, "Customer deleted successfully.")
     |> redirect(to: cms_page_path(conn, :index))
   end
 end
