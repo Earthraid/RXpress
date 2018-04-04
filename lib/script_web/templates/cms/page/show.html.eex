@@ -18,18 +18,17 @@
   </li>
 
   <li>
-    <strong>Pick Up Time:</strong>
+    <strong>Pick Up Time (00:00:00):</strong>
     <%= @page.pickup_time %>
   </li>
 
   <li>
-    <strong>Delivery Time:</strong>
+    <strong>Delivery Time (00:00:00):</strong>
     <%= @page.delivery_time %>
   </li>
 
-  <%= if (user.user_type == '1') do %>
-  <li> test </li>
-
+  <%= if @user.user_type == 1 do %>
+    <li>test</li>
   <% end %>
 
 </ul>

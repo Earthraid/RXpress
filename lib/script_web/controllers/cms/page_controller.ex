@@ -3,6 +3,8 @@ defmodule ScriptWeb.CMS.PageController do
 
   alias Script.CMS
   alias Script.CMS.Page
+  alias Scriupt.Accounts.User
+  alias Script.Repo
 
   def index(conn, _params) do
     pages = CMS.list_pages()
@@ -26,8 +28,11 @@ defmodule ScriptWeb.CMS.PageController do
   end
 
   def show(conn, %{"id" => id}) do
+
     page = CMS.get_page!(id)
-    render(conn, "show.html", page: page)
+    user_id = fetch_session(:user_id)
+    user = Repo.get(User, user_id)
+    render(conn, "show.html", page: page, user: user)
   end
 
   def edit(conn, %{"id" => id}) do

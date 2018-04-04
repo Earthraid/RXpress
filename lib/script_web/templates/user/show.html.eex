@@ -12,7 +12,7 @@
   </li>
   <li>
     <strong>Company:</strong>
-    <%= @user.company_type %>
+    <%= @user.company_id %>
   </li>
 </ul>
 

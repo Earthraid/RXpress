@@ -19,23 +19,25 @@ defmodule ScriptWeb.Router do
     get "/", HomeController, :index
 
     resources "/Users", UserController
+
     resources "/Sessions", SessionController, only: [:new, :create, :delete], singleton: true
+  #copy and paste ^ into /pharmacy
 
   end
   #Model as to how I think I need to move forward with login credentials and page access
-  scope "/Pharmacy", ScriptWeb.CMS, as: :cms do
+  scope "/", ScriptWeb.CMS, as: :cms do
     pipe_through [:browser, :authenticate_user]
 
-    resources "/Pages", PageController
+    resources "/Pharmacy", PageController
   end
-  
+
 
   defp authenticate_user(conn, _) do
     case get_session(conn, :user_id) do
       nil ->
         conn
         |> Phoenix.Controller.put_flash(:error, "Login required")
-        |> Phoenix.Controller.redirect(to: "/")
+        |> Phoenix.Controller.redirect(to: "/Sessions/new")
         |> halt()
       user_id ->
         assign(conn, :current_user, Script.Accounts.get_user!(user_id))

@@ -12,6 +12,7 @@ config :script,
 # Configures the endpoint
 config :script, ScriptWeb.Endpoint,
   url: [host: "localhost"],
+  root: Path.dirname(__DIR__),
   secret_key_base: "qLot0KuSkHAdtB/W9hEyCBXDYYlAoVFyBFUtmNdPNs01Kbw39Ao5GUlHs3Um+VN9",
   render_errors: [view: ScriptWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Script.PubSub,

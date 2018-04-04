@@ -2,7 +2,14 @@ CMS -> Will be Pharmacy option to enter patient/prescription information
 
 User -> Will be place for RXpress to enter new users to the system for Login
 
-Session -> Stores information that restricts what can be seen by whom
+Session -> Login / Log Off
+
 
 
 Schemas contact the DataBase
+
+
+IDEAS
+-----
+Change password under edit user
+
