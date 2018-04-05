@@ -31,7 +31,13 @@
     <li>test</li>
   <% end %>
 
+
 </ul>
 
 <span><%= link "Edit", to: cms_page_path(@conn, :edit, @page) %></span>
 <span><%= link "Back", to: cms_page_path(@conn, :index) %></span>
+
+<div class="row back">
+  <a class="col-sm-2 col-sm-offset-5 btn text-center" id="go_back" href="/">Go Back</a>
+</div>
+<h5 class="copy">&copy; 2018</h5>

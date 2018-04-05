@@ -1,9 +1,17 @@
 
 <div class="home_page">
-    <div class="row">
-      <div class="col-sm-6 col-sm-offset-4 reg_log">
-      <a class="col-sm-5 btn text-center" id="register" href="/Users/new">Register</a>
-      <a class="col-sm-5 btn text-center" id="login" href="/Sessions/new">Your RXpress</a>
+    <div class="row reg_log">
+      <div class="register_">
+      <a class="col-sm-3 btn text-center" id="register" href="/Users/new">Register</a>
+    </div>
+    <div class="login_">
+      <a class="col-sm-3 btn text-center" id="login" href="/Sessions/new">Your RXpress</a>
+    </div>
+    <div class="pharmacy_">
+      <a class="col-sm-3 btn text-center" id="pharmacy" href="/Pharmacy">Customers</a>
+    </div>
+    <div class="courier_">
+      <a class="col-sm-3 btn text-center" id="courier" href="/Pharmacy">Deliveries</a>
     </div>
   </div>
  <h5>&copy; 2018</h5>
