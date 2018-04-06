@@ -1,6 +1,6 @@
 <h2>Edit User</h2>
 
-<%= render "form.html", Map.put(assigns, :action, user_path(@conn, :update, @user)) %>
+<%= render "form.html", Map.put(assigns, :action, cms_user_path(@conn, :update, @user)) %>
 
 <div class="row back">
   <a class="col-sm-2 col-sm-offset-5 btn text-center" id="go_back" href="/">Go Back</a>

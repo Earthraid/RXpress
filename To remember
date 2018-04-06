@@ -9,38 +9,19 @@ Session -> Login / Log Off
 Schemas contact the DataBase
 
 
-IDEAS
------
-Change password under edit user
 
 
-Attempt at Select list:
+
+Select list:
 <!--<div class="form-group">
-  <%= select(form, :user_type, Enum.map(@users, &{&1.name. &1.id})) %>
-    #=> <select id="user_type" name="user[role][]">
-        <option value="1">Admin</option>
-        <option value="2">Pharmacy</option>
-        <option value="3">Courier</option>
-        </select>
+  <%= select(form, :user_type, company_select_options) %>
 </div>-->
 
 
-Attempt at Plug:
-#defmodule Script.Plugs.User do
-#  import Plug.Conn
-#  alias Script.Repo
-#  alias Script.Accounts.User
-
-#  def init(default), do: default
-
-#  def call(conn, _default) do
-#    if get_session(conn, :user) do
-#      user = Repo.get(User, get_session(conn, :user))
-#      assign(conn, :order, cart)
-#    else
-#      user = Repo.insert!(%User{status: "user"})
-#      conn = put_session(conn, :user, user.user_id)
-#      assign(conn, :user, user_id)
-#    end
-#  end
-#end
+Questions
+---------
+Hidden fields
+Show information pulled from DB
+Cant create User <-- have to do with some routing in the form?
+Get buttons to vanish based on login
+blank select list item to start

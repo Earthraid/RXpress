@@ -19,30 +19,31 @@
   border: 1px solid #ff0000;
   color:#ff0000;
   margin-right:2%;
-  margin-left:-12%;
+  margin-left: 10%;
 }
 #register:hover{
   background-color: #ff0000;
   color:#ffffff;
 }
-#pharmacy{
+#customers{
   background-color: white;
   border: 1px solid #ff0000;
   color:#ff0000;
   margin-right:2%;
   margin-left: 2%;
 }
-#pharmacy:hover{
+#customers:hover{
   background-color: #ff0000;
   color:#ffffff;
 }
-#courier{
+#users{
   background-color: white;
   border: 1px solid #ff0000;
   color:#ff0000;
-  margin-left:2%;
+  margin-right:2%;
+  margin-left: 2%;
 }
-#courier:hover{
+#users:hover{
   background-color: #ff0000;
   color:#ffffff;
 }

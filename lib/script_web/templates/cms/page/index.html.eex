@@ -1,4 +1,4 @@
-<h2>Listing Customers</h2>
+<h2>Customers</h2>
 
 <table class="table">
   <thead>
@@ -6,9 +6,14 @@
       <th>First Name</th>
       <th>Last Name</th>
       <th>Address</th>
-      <th>Medication</th>
+      <th>Pick Up Time</th>
+      <th>Delivery Time</th>
 
-      <th></th>
+      <%= if @conn.assigns.current_user.user_type == 1 do %>
+      <th>Courier Service</th>
+      <% end %>
+
+
     </tr>
   </thead>
   <tbody>
@@ -17,19 +22,26 @@
       <td><%= page.f_name %></td>
       <td><%= page.l_name %></td>
       <td><%= page.cust_address %></td>
-      <td><%= page.med_name %></td>
+      <td><%= page.pickup_time %></td>
+      <td><%= page.delivery_time %></td>
 
       <td class="text-right">
+        <%= if @conn.assigns.current_user.user_type == 2 || @conn.assigns.current_user.user_type == 1 do %>
         <span><%= link "Show", to: cms_page_path(@conn, :show, page), class: "btn btn-default btn-xs" %></span>
         <span><%= link "Edit", to: cms_page_path(@conn, :edit, page), class: "btn btn-default btn-xs" %></span>
+        <%= if @conn.assigns.current_user.user_type == 2 do %>
         <span><%= link "Delete", to: cms_page_path(@conn, :delete, page), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+        <% end %>
+        <% end %>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
+<%= if @conn.assigns.current_user.user_type == 2 do %>
 <span><%= link "New Customer", to: cms_page_path(@conn, :new) %></span>
+<% end %>
 <div class="row back">
   <a class="col-sm-2 col-sm-offset-5 btn text-center" id="go_back" href="/">Go Back</a>
 </div>

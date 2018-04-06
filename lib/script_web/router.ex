@@ -18,9 +18,9 @@ defmodule ScriptWeb.Router do
 
     get "/", HomeController, :index
 
-    resources "/Users", UserController
 
-    resources "/Sessions", SessionController, only: [:new, :create, :delete], singleton: true
+
+    resources "/sessions", SessionController, only: [:new, :create, :delete], singleton: true
   #copy and paste ^ into /pharmacy
 
   end
@@ -28,7 +28,9 @@ defmodule ScriptWeb.Router do
   scope "/", ScriptWeb.CMS, as: :cms do
     pipe_through [:browser, :authenticate_user]
 
-    resources "/Pharmacy", PageController
+    resources "/users", UserController
+
+    resources "/customers", PageController
   end
 
 

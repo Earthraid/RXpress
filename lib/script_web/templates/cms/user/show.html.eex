@@ -16,7 +16,7 @@
   </li>
 </ul>
 
-<span><%= link "Edit", to: user_path(@conn, :edit, @user) %></span>
+<span><%= link "Edit", to: cms_user_path(@conn, :edit, @user) %></span>
 <div class="row back">
   <a class="col-sm-2 col-sm-offset-5 btn text-center" id="go_back" href="/">Go Back</a>
 </div>
