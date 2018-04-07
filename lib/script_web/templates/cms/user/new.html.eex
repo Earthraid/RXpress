@@ -1,3 +1,8 @@
 <h2>New User</h2>
 
 <%= render "form.html", Map.put(assigns, :action, cms_user_path(@conn, :create)) %>
+
+<div class="row back">
+  <a class="col-sm-2 col-sm-offset-5 btn text-center" id="go_back" href="/users">Go Back</a>
+</div>
+<h5 class="copy">&copy; 2018</h5>

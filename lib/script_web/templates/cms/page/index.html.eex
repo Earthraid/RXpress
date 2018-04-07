@@ -12,7 +12,9 @@
       <%= if @conn.assigns.current_user.user_type == 1 do %>
       <th>Courier Service</th>
       <% end %>
-
+      <%= if @conn.assigns.current_user.user_type == 3 do %>
+      <th>Delivery Status</th>
+      <% end %>
 
     </tr>
   </thead>
@@ -29,6 +31,9 @@
       <td><%= page.courier_id %></td>
       <% end %>
 
+      <%= if @conn.assigns.current_user.user_type == 3 do %>
+      <td>Insert check boxes here for delivered on undeliverable</td>
+      <% end %>
 
       <td class="text-right">
         <%= if @conn.assigns.current_user.user_type == 2 || @conn.assigns.current_user.user_type == 1 do %>
