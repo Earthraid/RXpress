@@ -25,6 +25,11 @@
       <td><%= page.pickup_time %></td>
       <td><%= page.delivery_time %></td>
 
+      <%= if @conn.assigns.current_user.user_type == 1 do %>
+      <td><%= page.courier_id %></td>
+      <% end %>
+
+
       <td class="text-right">
         <%= if @conn.assigns.current_user.user_type == 2 || @conn.assigns.current_user.user_type == 1 do %>
         <span><%= link "Show", to: cms_page_path(@conn, :show, page), class: "btn btn-default btn-xs" %></span>

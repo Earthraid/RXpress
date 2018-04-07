@@ -6,8 +6,8 @@
   background-color: white;
   border: 1px solid #ff0000;
   color:#ff0000;
-  margin-left:2%;
-  margin-right:2%;
+  float: none;
+    margin: 1% auto;
 
 }
 #login:hover{
@@ -18,8 +18,8 @@
   background-color: white;
   border: 1px solid #ff0000;
   color:#ff0000;
-  margin-right:2%;
-  margin-left: 10%;
+  float: none;
+    margin: 1% auto;
 }
 #register:hover{
   background-color: #ff0000;
@@ -29,8 +29,8 @@
   background-color: white;
   border: 1px solid #ff0000;
   color:#ff0000;
-  margin-right:2%;
-  margin-left: 2%;
+  float: none;
+    margin: 1% auto;
 }
 #customers:hover{
   background-color: #ff0000;
@@ -40,8 +40,8 @@
   background-color: white;
   border: 1px solid #ff0000;
   color:#ff0000;
-  margin-right:2%;
-  margin-left: 2%;
+  float: none;
+    margin: 1% auto;
 }
 #users:hover{
   background-color: #ff0000;

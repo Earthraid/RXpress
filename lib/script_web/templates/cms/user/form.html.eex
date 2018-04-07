@@ -5,14 +5,12 @@
     </div>
   <% end %>
 
+<%= if @conn.assigns.current_user.user_type == 1 do %>
   <div class="form-group">
-    <%= if @conn.assigns.current_user.user_type == 1 do %>
     <%= inputs_for f, :credential, fn cf -> %>
     <%= label cf, "User Name", class: "control-label" %>
     <%= text_input cf, :user_name, class: "form-control" %>
     <%= error_tag cf, :user_name %>
-    <% end %>
-    <% end %>
   </div>
 
   <div class="form-group">
@@ -22,24 +20,22 @@
   </div>
 
   <div class="form-group">
-    <%= if @conn.assigns.current_user.user_type == 1 do %>
     <%= label f, "Company", class: "control-label" %>
     <%= select(f, :company_id, company_options) %>
     <%= error_tag f, :company_id %>
-    <% end %>
   </div>
 
   <div class="form-group">
-    <%= if @conn.assigns.current_user.user_type == 1 do %>
     <%= label f, "User Type", class: "control-label" %>
     <%= select(f, :user_type, company_select_options) %>
     <%= error_tag f, :user_type %>
-    <% end %>
   </div>
 
   <div class="form-group">
     <%= submit "Submit", class: "btn", id: "submit" %>
   </div>
+<% end %>
+<% end %>
 <% end %>
 
 <div class="row reg_log back">

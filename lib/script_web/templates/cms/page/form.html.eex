@@ -4,7 +4,7 @@
       <p>Oops, something went wrong! Please check the errors below.</p>
     </div>
   <% end %>
-
+<%= if @conn.assigns.current_user.user_type == 2 do %>
   <div class="form-group">
     <%= label f, "Customer First Name", class: "control-label" %>
     <%= text_input f, :f_name, class: "form-control" %>
@@ -29,23 +29,19 @@
     <%= error_tag f, :pharm_id %>
   </div>
 
-  <div> Need to insert a hidden field that inputs the customer's pharmacy ID
+  <div> Need to turn the above into a hidden field that inputs the customer's pharmacy ID
     based on the company_id of the enterer.</div>
 
   <div class="form-group">
-    <%= if @conn.assigns.current_user.user_type == 2 do %>
     <%= label f, "Medication Name", class: "control-label" %>
     <%= text_input f, :med_name, class: "form-control" %>
     <%= error_tag f, :med_name %>
-    <% end %>
   </div>
 
   <div class="form-group">
-    <%= if @conn.assigns.current_user.user_type == 2 do %>
     <%= label f, "Medication Information", class: "control-label" %>
     <%= text_input f, :med_info, class: "form-control" %>
     <%= error_tag f, :med_info %>
-    <% end %>
   </div>
 
   <div class="form-group">
@@ -59,14 +55,39 @@
     <%= text_input f, :delivery_time, class: "form-control" %>
     <%= error_tag f, :delivery_time %>
   </div>
+<% end %>
+
+<%= if @conn.assigns.current_user.user_type == 1 do %>
+
+<ul>
+  <li>
+    <strong>Customer First Name:</strong>
+    <%= @page.f_name %>
+  </li>
+  <li>
+    <strong>Customer Last Name:</strong>
+    <%= @page.l_name %>
+  </li>
+  <li>
+    <strong>Customer Address:</strong>
+    <%= @page.cust_address %>
+  </li>
+  <li>
+    <strong>Pick Up Time:</strong>
+    <%= @page.pickup_time %>
+  </li>
+  <li>
+    <strong>Delivery Time:</strong>
+    <%= @page.delivery_time %>
+  </li>
+</ul>
 
   <div class="form-group">
-    <%= if @conn.assigns.current_user.user_type == 1 do %>
     <%= label f, "Courier", class: "control-label" %>
     <%= select(f, :courier_id, courier_select_options) %>
     <%= error_tag f, :courier_id %>
-    <% end %>
   </div>
+  <% end %>
 
   <div class="form-group">
     <%= submit "Submit", class: "btn", id: "submit" %>
