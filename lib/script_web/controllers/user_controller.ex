@@ -30,6 +30,7 @@ defmodule ScriptWeb.CMS.UserController do
         |> put_flash(:info, "User created successfully.")
         |> redirect(to: cms_user_path(conn, :show, user))
       {:error, %Ecto.Changeset{} = changeset} ->
+        IO.inspect(changeset) 
         render(conn, "new.html", changeset: changeset)
     end
   else
